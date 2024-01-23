@@ -1,3 +1,12 @@
+<<<<<<< HEAD
 O(n)
 O(n^2)
 O(n^2)
+=======
+1-O.txt:
+
+Best Case: O(n)
+Average Case: O(n^2)
+Worst Case: O(n^2)
+
+>>>>>>> 9a16f264d0fb6ae212f6d22a2b4f68c87a6526c3
