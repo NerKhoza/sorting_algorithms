@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * swap - a function that swaps values
+ * swap - a function that swaps values.
  * @a: parameter 1
  * @b: parameter 2
  */
@@ -15,7 +15,7 @@ void swap(int *a, int *b)
 }
 
 /**
- * bubble_sort - sorts an array of integers in ascending order
+ * bubble_sort - sorts an array of integers in ascending order.
  * @array: parameter 1
  * @size: parameter 2
  */
