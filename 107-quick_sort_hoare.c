@@ -29,35 +29,35 @@ void swap_ints(int *a, int *b)
  *
  * Return: The final partition index.
  *
- * Description: Uses the last element of the partition as the pivot.
+ * Description: Uses the last element of the partition as the driver.
  * Prints the array after each swap of two elements.
  */
 int hoare_partition(int *array, size_t size, int left, int right)
 {
-	int pivot, above, below;
+	int driver, up, down;
 
-	pivot = array[right];
-	for (above = left - 1, below = right + 1; above < below;)
+	driver = array[right];
+	for (up = left - 1, down = right + 1; up < down;)
 	{
 		do {
-			above++;
-		} while (array[above] < pivot);
+			up++;
+		} while (array[up] < driver);
 		do {
-			below--;
-		} while (array[below] > pivot);
+			down--;
+		} while (array[down] > driver);
 
-		if (above < below)
+		if (up < down)
 		{
-			swap_ints(array + above, array + below);
+			swap_ints(array + up, array + down);
 			print_array(array, size);
 		}
 	}
 
-	return (above);
+	return (up);
 }
 
 /**
- * hoare_sort - Implement the quicksort algorithm through recursion.
+ * hoare_sort - Implement the quicksort algorithm through recursion
  * @array: An array of integers to sort.
  * @size: The size of the array.
  * @left: The starting index of the array partition to order.
@@ -67,13 +67,13 @@ int hoare_partition(int *array, size_t size, int left, int right)
  */
 void hoare_sort(int *array, size_t size, int left, int right)
 {
-	int part;
+	int belong;
 
 	if (right - left > 0)
 	{
-		part = hoare_partition(array, size, left, right);
-		hoare_sort(array, size, left, part - 1);
-		hoare_sort(array, size, part, right);
+		belong = hoare_partition(array, size, left, right);
+		hoare_sort(array, size, left, belong - 1);
+		hoare_sort(array, size, belong, right);
 	}
 }
 
